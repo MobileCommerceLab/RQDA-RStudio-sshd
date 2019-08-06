@@ -3,6 +3,7 @@ version: '3.4'
 services:
   rstudio:
     build: "."
+    image: mobilecommercelab/rqda-rstudio-sshd
     environment:
       - ROOT_PASSWORD
     ports:

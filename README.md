@@ -22,7 +22,13 @@ choice.
 
 ## Usage
 
-If you're on a Mac, just double-click on the `run_RQDA.command` script. If
+If you want to pull the image from Docker Hub, first run:
+
+```
+docker-compose pull
+```
+
+Next, if you're on a Mac, just double-click on the `run_RQDA.command` script. If
 you're on Linux, just run the `run_RQDA.command` script from the
 command-line. If you're on Windows, you'll have to start the Docker container,
 then SSH with X11 forwarding.
