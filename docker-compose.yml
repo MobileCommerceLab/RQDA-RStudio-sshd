@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  rstudio:
+    build: "."
+    environment:
+      - ROOT_PASSWORD
+    ports:
+      - "${LISTEN_SSHD}:22"
+    volumes:
+      - "./rstudio:/root/rstudio"

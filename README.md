@@ -1,0 +1,43 @@
+# RQDA in Docker
+
+RQDA (R Qualitative Data Analysis) installed on the `rstudio/r-base` image. Because RQDA uses GTK for its UI, the tool must be accessed via X11. This image allows you to connect to X11 using SSH X11 forwarding.
+
+## Prerequisites
+
+Your host system needs Docker and an X11 windowing system.
+
+## Setup
+
+Configure your host to allow X11 forwarding to localhost by adding the following to `~/.ssh/config`:
+
+```
+Host localhost
+  ForwardX11Trusted yes
+  ForwardX11 yes
+  XAuthLocation /opt/X11/bin/xauth
+```
+
+Copy the `dot_env_example` file to `.env`. Then, fill in a root password of your
+choice.
+
+## Usage
+
+If you're on a Mac, just double-click on the `run_RQDA.command` script. If
+you're on Linux, just run the `run_RQDA.command` script from the
+command-line. If you're on Windows, you'll have to start the Docker container,
+then SSH with X11 forwarding.
+
+When prompted, enter the root password that you chose earlier.
+
+RStudio should open in X11. Next, type the following to start RQDA:
+
+```
+library(RQDA)
+RQDA()
+```
+
+For usage details, see the [RQDA project page](http://rqda.r-forge.r-project.org/index.html). I recommend saving the project into `/root/rstudio`, since that directory is volume mapped.
+
+## Why does this exist?
+
+Setting up RQDA can be time consuming.
