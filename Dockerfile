@@ -1,4 +1,3 @@
-MAINTAINER pstory@andrew.cmu.edu
 # Pulling the SSHD configuration from this image. It's also based on xenial, so
 # copying the sshd config file later shouldn't be a problem.
 FROM mobilecommercelab/sshd-password AS sshd
@@ -35,3 +34,5 @@ COPY --from=sshd /etc/ssh/sshd_config /etc/ssh/sshd_config
 COPY --from=sshd /entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/sbin/sshd", "-D"]
+
+MAINTAINER pstory@andrew.cmu.edu
