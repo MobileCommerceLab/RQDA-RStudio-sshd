@@ -17,7 +17,7 @@ Host localhost
   XAuthLocation /opt/X11/bin/xauth
 ```
 
-Copy the `dot_env_example` file to `.env`. Then, fill in a root password of your
+**Important:** Copy the `dot_env_example` file to `.env`, and set the permissions with `chmod 600 .env`. Then, fill in a root password of your
 choice.
 
 ## Usage
