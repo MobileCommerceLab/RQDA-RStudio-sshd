@@ -5,6 +5,8 @@ RQDA (R Qualitative Data Analysis) installed on the `rstudio/r-base` image. Beca
 ## Prerequisites
 
 Your host system needs Docker and an X11 windowing system.
+These instructions are for MacOS and Linux systems only.
+It may be possible to use Windows Subsystem for Linux alongside an X11 server in Windows, but this is not officially supported.
 
 ## Setup
 
