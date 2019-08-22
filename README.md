@@ -19,8 +19,14 @@ Host localhost
   XAuthLocation /opt/X11/bin/xauth
 ```
 
-**Important:** Copy the `dot_env_example` file to `.env`, and set the permissions with `chmod 600 .env`. Then, fill in a root password of your
-choice.
+**Important:** Copy the `dot_env_example` file to `.env`, and set the permissions with `chmod 600 .env`: 
+
+```bash
+cp dot_env_example .env
+chmod 600 .env
+```
+
+Then, edit the `.env` file -- enter a strong password of your choice for the root account. You may also configure the address and port that the service will be bound to here.
 
 ## Usage
 
