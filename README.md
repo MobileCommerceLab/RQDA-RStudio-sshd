@@ -19,7 +19,7 @@ Host localhost
   XAuthLocation /opt/X11/bin/xauth
 ```
 
-**Important:** Copy the `dot_env_example` file to `.env`, and set the permissions with `chmod 600 .env`: 
+**Important:** Copy the `dot_env_example` file to `.env`, and set the permissions with `chmod 600 .env`:
 
 ```bash
 cp dot_env_example .env
@@ -51,6 +51,13 @@ RQDA()
 ```
 
 For usage details, see the [RQDA project page](http://rqda.r-forge.r-project.org/index.html). I recommend saving the project into `/root/rstudio`, since that directory is volume mapped.
+
+A few useful commands:
+
+```
+help(package="RQDA")
+summaryCodings()
+```
 
 ## Why does this exist?
 
