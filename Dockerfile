@@ -17,7 +17,10 @@ RUN apt-get update && apt-get install -y gdebi-core \
 # Installation of BH and plogr must be done before RQDA, for some reason
 RUN R -e 'install.packages("BH", dependencies=c("Depends", "Imports"), repos="http://cran.us.r-project.org")' \
  && R -e 'install.packages("plogr", dependencies=c("Depends", "Imports"), repos="http://cran.us.r-project.org")' \
- && R -e 'install.packages("RQDA", dependencies=c("Depends", "Imports"), repos="http://cran.us.r-project.org")'
+ && R -e 'install.packages(c("gWidgets", "gWidgetsRGtk2", "RGtk2", "RSQLite", "igraph", "cairoDevice"), repos="http://cran.us.r-project.org")' \
+ && R -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/gWidgets/gWidgets_0.0-54.2.tar.gz", dependencies=c("Depends", "Imports"), repos=NULL, type="source")' \
+ && R -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/gWidgetsRGtk2/gWidgetsRGtk2_0.0-86.1.tar.gz", dependencies=c("Depends", "Imports"), repos=NULL, type="source")' \
+ && R -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/RQDA/RQDA_0.3-1.tar.gz", dependencies=c("Depends", "Imports"), repos=NULL, type="source")'
 RUN wget https://download1.rstudio.org/desktop/xenial/amd64/rstudio-1.2.1335-amd64.deb \
  && yes | gdebi rstudio-1.2.1335-amd64.deb \
  && rm rstudio-1.2.1335-amd64.deb \
